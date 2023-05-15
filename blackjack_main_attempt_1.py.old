@@ -1,0 +1,68 @@
+# # ## Python Blackjack
+# # For this project you will make a Blackjack game using Python. Click <a href="http://www.hitorstand.net/strategy.php">here</a> to familiarize yourself with the the rules of the game. You won't be implementing every rule "down to the letter" with the game, but we will doing a simpler version of the game. This assignment will be given to further test your knowledge on object-oriented programming concepts.
+
+# # ### Rules:
+
+# # `1. ` The game will have two players: the Dealer and the Player. The game will start off with a deck of 52 cards. The 52 cards will consist of 4 different suits: Clubs, Diamonds, Hearts and Spades. For each suit, there will be cards numbered 1 through 13. <br>
+# # **Note: No wildcards will be used in the program**
+
+# # `2. ` When the game begins, the dealer will shuffle the deck of cards, making them randomized. After the dealer shuffles, it will deal the player 2 cards and will deal itself 2 cards from. The Player should be able to see both of their own cards, but should only be able to see one of the Dealer's cards.
+ 
+# # `3. ` The objective of the game is for the Player to count their cards after they're dealt. If they're not satisfied with the number, they have the ability to 'Hit'. A hit allows the dealer to deal the Player one additional card. The Player can hit as many times as they'd like as long as they don't 'Bust'. A bust is when the Player is dealt cards that total more than 21.
+
+# # `4. ` If the dealer deals the Player cards equal to 21 on the **first** deal, the Player wins. This is referred to as Blackjack. Blackjack is **NOT** the same as getting cards that equal up to 21 after the first deal. Blackjack can only be attained on the first deal.
+
+# # `5. ` The Player will never see the Dealer's hand until the Player chooses to 'stand'. A Stand is when the player tells the dealer to not deal it anymore cards. Once the player chooses to Stand, the Player and the Dealer will compare their hands. Whoever has the higher number winsdef shuffle_cards. Keep in mind that the Dealer can also bust. 
+
+# import player
+# import deck
+# import card
+# import human
+
+
+# is_game_started = False
+# total_players = 2
+# player1 = player.Player("Player1", 21)
+# dealer = player.Player("Player2", 21)
+
+# class BlackjackGame:
+#     def __init__(self):
+#         self.deck = deck.Deck()
+#         self.deck.random_shuffle()
+
+# for d in the_deck:
+#     print(deck.Deck)
+
+#     print("<-------------------------Your Turn----------------------------->")
+
+# # while total < 21
+# #     return('Type "S" to stay or "H" to hit"'):
+# #         if option is "S"
+# #             break
+# #     card1 = hit_me()
+# x = input("Would you like to hit or stay: h/s")
+# print(x)
+
+
+# dealer.hit_me(deck)
+# player.hit_me(deck)
+# dealer.hit_me(deck)
+# player.hit_me(deck)
+
+# dealer.stay(deck)
+# player.stay(deck)
+# dealer.stay(deck)
+# player.stay(deck)
+
+# dealer.show_your_hand()
+# player.show_your_hand()
+# dealer.show_your_hand()
+# player.show_your_hand()
+
+
+# def card_dealt(self):
+#         if len(self.cards) > 0:
+#             return self.cards.pop()
+#         else:
+#             return None
+
