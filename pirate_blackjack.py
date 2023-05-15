@@ -52,6 +52,7 @@ class Game: # Pirate Blackjack
         print("Ahoy Me Hearty, Welcome To Me Ship.") # Game started
         self.game_started = True
         self.create_the_deck()
+        self.player.show_hand(True)
 
         player_choice = player_input(game)
         if player_choice.lower() == 'h': # If player choice is h then provide additional card
