@@ -44,7 +44,7 @@ class Game: # Pirate Blackjack
         self.game_started = False # Instance Variables
 
     def create_the_deck(self):
-        for _ in range(2):
+        for _ in range(1):
             self.player.add_card(self.deck.deal_card()) # Giving Cards from deck to player 
             self.dealer.add_card(self.deck.deal_card()) # Giving Cards from deck to dealer
 
@@ -82,7 +82,7 @@ class Game: # Pirate Blackjack
         if player_hand_value > 21:
             print("Arr...Walk The Plank, Ye About To Be Marooned")
         elif dealer_hand_value > 21 or player_hand_value > dealer_hand_value:
-            print("Yo-Ho-Ho, It's A Pirate's Life For You")            
+            print("Yo-Ho-Ho, It's A Pirate's Life For You") #Winner      
         elif player_hand_value < dealer_hand_value:
             print("Blimey! ROPE'S END... Surrender The Booty, All Your Loot Is Now Mine") # Loser
         else:
@@ -91,26 +91,27 @@ class Game: # Pirate Blackjack
 
 
 def player_input(game):
-    # if game.game_started is True:
+    
     #     print("Weigh Anchor... Matey") # If rematch in play
     #     game.play()
     #     return
-    player_choice = input("Me Hearties. Shall We Gather Some Of thee Booty? (Enter: (y/n) )")
-    if player_choice == "n":
-        print("Blimey, Ye Scurvy Dog, Ye Abandoned Ship.") # Player Quited Game
-        quit()
-    elif player_choice == "y":
+    if game.game_started is not True:
+        player_choice = input("Me Hearties. Shall We Gather Some Of thee Booty? (Enter: (y/n) )")
+        if player_choice == "n":
+            print("Blimey, Ye Scurvy Dog, Ye Abandoned Ship.") # Player Quited Game
+            game.game_started = False
+            quit()
 
-        player_choice = input("Ye Wish To Hit or Stay, Thee Choice Be Yer's, What Say Ye? Enter: (h/s): ") # Hit or Stay
-        choice = player_choice.lower()
-        if choice == "h" or choice == "s" or choice == "hit" or choice == "stay": # Hit or Stay
-            return player_choice
-        else: 
-            player_choise = input(f"Avast...Read The Rules Again Matey: [{player_choice}]. Let's Try Again... Enter h/s or hit/stay or quit: ") # If invalid selection
-            if (player_choise.lower == "quit"):
-                print("Shiver Me Timbers... You Abandoned Ship, You Scallywag.") # Players quit
-                quit()
-        return player_choise
+    player_choice = input("Ye Wish To Hit or Stay, Thee Choice Be Yer's, What Say Ye? Enter: (h/s): ") # Hit or Stay
+    choice = player_choice.lower()
+    if choice == "h" or choice == "s" or choice == "hit" or choice == "stay": # Hit or Stay
+        return player_choice
+    else: 
+        player_choise = input(f"Avast...Read The Rules Again Matey: [{player_choice}]. Let's Try Again... Enter h/s or hit/stay or quit: ") # If invalid selection
+        if (player_choise.lower == "quit"):
+            print("Shiver Me Timbers... You Abandoned Ship, You Scallywag.") # Players quit
+            quit()
+    return player_choise
     
 
 
