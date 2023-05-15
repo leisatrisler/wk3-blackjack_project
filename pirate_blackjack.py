@@ -29,12 +29,13 @@
 # dealer.show_your_hand()
 # player.show_your_hand()
 
-from dealer import Dealer
-from deck import Deck
-from player import Player
+
+from dealer import Dealer # Imported dealer which was inherited from Human Class
+from deck import Deck # Deck is imported and is utilizing Card Class to manage the cards
+from player import Player # Imported player which was inherited from Human Class
 
 
-class Game:
+class Game: # Pirate Blackjack 
     def __init__(self):
         self.deck = Deck() # Instance Variables 
         self.deck.randomize_cards() # Instance Variables
@@ -44,8 +45,8 @@ class Game:
 
     def create_the_deck(self):
         for _ in range(2):
-            self.player.add_card(self.deck.deal_card())
-            self.dealer.add_card(self.deck.deal_card())
+            self.player.add_card(self.deck.deal_card()) # Giving Cards from deck to player 
+            self.dealer.add_card(self.deck.deal_card()) # Giving Cards from deck to dealer
 
     def play(self):
         print("Ahoy Me Hearty, Welcome To Me Ship.") # Game started
@@ -53,16 +54,16 @@ class Game:
         self.create_the_deck()
 
         player_choice = player_input(game)
-        if player_choice.lower() == 'h':
-            self.player.add_card(self.deck.deal_card())
-            self.player.show_hand(True)
-            if self.player.get_hand_value() > 21:
+        if player_choice.lower() == 'h': # If player choice is h then provide additional card
+            self.player.add_card(self.deck.deal_card()) # Added card
+            self.player.show_hand(True) # Show Hand
+            if self.player.get_hand_value() > 21: # If over 21...
                 print("Arr...Walk The Plank, Ye About To Be Marooned") # Busted
                 
         player_choice = player_input(game)
-        if player_choice.lower() == 'h':
-            self.player.add_card(self.deck.deal_card())
-            self.player.show_hand(True)
+        if player_choice.lower() == 'h': # If player choice is h then provide additional card
+            self.player.add_card(self.deck.deal_card()) # Added card
+            self.player.show_hand(True) # Show Hand
             if self.player.get_hand_value() > 21:
                 print("Arr...Walk The Plank, Ye About To Be Marooned") # Busted
 
@@ -70,6 +71,7 @@ class Game:
         while dealer_hand_value < 17: # Game rule dealer can not pull another if 17 or higher
             self.dealer.add_card(self.deck.deal_card()) 
             dealer_hand_value = self.dealer.get_hand_value()
+
 
         self.player.show_hand(True) # Player shows hand
         self.dealer.show_hand(True) # Dealer shows hand
@@ -114,4 +116,4 @@ def player_input(game):
 
 game = Game()
 # player_input(game)
-game.play()
+game.play() # start game method
